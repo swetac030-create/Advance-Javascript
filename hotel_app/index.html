@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hotel Registration — Swan Solution</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container py-4">
+    <h1 class="mb-4">Hotel Guest Registration</h1>
+
+    <div id="message-container"></div>
+
+    <form id="guest-form" class="row g-3 needs-validation" novalidate>
+      <div class="col-12 col-md-6">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="fullName" name="fullName" required minlength="3">
+        <div class="invalid-feedback">Name must be at least 3 characters.</div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" name="phone" required pattern="\d{10}" maxlength="10">
+        <div class="invalid-feedback">Phone must be exactly 10 digits.</div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label for="aadhar" class="form-label">Aadhar Card Number</label>
+        <input type="text" class="form-control" id="aadhar" name="aadhar" required maxlength="12" pattern="\d{12}">
+        <div class="invalid-feedback">Aadhar must be exactly 12 digits.</div>
+      </div>
+
+      <div class="col-12">
+        <label for="address" class="form-label">Address</label>
+        <textarea class="form-control" id="address" name="address" rows="2" required></textarea>
+        <div class="invalid-feedback">Address is required.</div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label for="checkIn" class="form-label">Check-in Date</label>
+        <input type="date" class="form-control" id="checkIn" name="checkIn" required>
+        <div class="invalid-feedback">Please select a future check-in date.</div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label for="checkOut" class="form-label">Check-out Date</label>
+        <input type="date" class="form-control" id="checkOut" name="checkOut" required>
+        <div class="invalid-feedback">Please select a valid check-out date (after check-in).</div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label for="adults" class="form-label">No of Adult</label>
+        <input type="number" class="form-control" id="adults" name="adults" required min="1">
+        <div class="invalid-feedback">Number of adults must be at least 1.</div>
+      </div>
+
+      <div class="col-12">
+        <label for="purpose" class="form-label">Purpose of visit</label>
+        <textarea class="form-control" id="purpose" name="purpose" rows="2" required minlength="10"></textarea>
+        <div class="invalid-feedback">Purpose must be at least 10 characters.</div>
+      </div>
+
+      <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" id="clearBtn" class="btn btn-secondary">Clear</button>
+        <a href="view.html" class="btn btn-outline-info ms-auto">View Submissions</a>
+      </div>
+    </form>
+  </div>
+
+  <script type="module" src="js/formHandler.js"></script>
+</body>
+</html>
